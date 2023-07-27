@@ -5,6 +5,8 @@ import com.google.gson.JsonObject;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 
 public interface ApiService {
@@ -14,4 +16,7 @@ public interface ApiService {
 
     @POST("/user/login")
     Call<ResponseBody> postLoginRequest(@Body JsonObject requestBody);
+
+    @GET("/post/print")
+    Call<ResponseBody> getPostListRequest(@Header(value = "Authorization") String jwt);
 }
