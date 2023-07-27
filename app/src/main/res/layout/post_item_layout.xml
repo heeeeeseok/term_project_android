@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/post_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
@@ -48,9 +49,41 @@
         android:layout_marginVertical="5dp"
         android:textColor="@color/black"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_thumb_up_24"/>
+
+        <TextView
+            android:id="@+id/post_recommendCount_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textColor="#FF0000"
+            android:text="0"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_baseline_chat_24"/>
+
+        <TextView
+            android:id="@+id/post_commentCount_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textColor="#007FFF"
+            android:text="0"/>
+    </LinearLayout>
+
     <View
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#777777"/>
-
 /</LinearLayout>

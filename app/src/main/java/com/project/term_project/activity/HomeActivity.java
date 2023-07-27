@@ -81,12 +81,20 @@ public class HomeActivity extends AppCompatActivity {
 
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                Long postId = jsonObject.getLong("postId");
                                 String editorName = jsonObject.getString("editorName");
                                 String profileImageUrl = jsonObject.getString("profileImageUrl");
                                 String title = jsonObject.getString("title");
                                 String content = jsonObject.getString("content");
+                                int recommendCount = jsonObject.getInt("recommendCount");
+                                int commentCount = jsonObject.getInt("commentCount");
+                                List<String> urlList = new ArrayList<>();
+                                JSONArray urlArray = jsonObject.getJSONArray("urlList");
+                                for (int j = 0; j < urlArray.length(); j++)
+                                    urlList.add(urlArray.get(j).toString());
 
-                                postInfoList.add(new PostInfo(editorName, title, content, profileImageUrl));
+                                postInfoList.add(new PostInfo(postId, editorName, title, content, profileImageUrl,
+                                        urlList, recommendCount, commentCount));
                             }
                             Log.d("my", "size : " + postInfoList.size());
                             recyclerView.setLayoutManager(new LinearLayoutManager(HomeActivity.this));
