@@ -1,9 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     tools:context=".activity.PostDetailActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/postDetail_profile_imageview"
+                android:background="#666666"
+                android:src="@drawable/ic_baseline_person_24"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitXY"/>
+
+            <TextView
+                android:id="@+id/postDetail_editorName_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="userName"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="5dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/postDetail_title_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:text="title"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/postDetail_content_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="content"
+            android:layout_marginVertical="5dp"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:id="@+id/postDetail_single_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/postDetail_recyclerview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_thumb_up_24"/>
+
+            <TextView
+                android:id="@+id/postDetail_recommendCount_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textColor="#FF0000"
+                android:text="0"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_baseline_chat_24"/>
+
+            <TextView
+                android:id="@+id/postDetail_commentCount_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textColor="#007FFF"
+                android:text="0"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
